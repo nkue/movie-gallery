@@ -1,0 +1,69 @@
+.shim {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.layer {
+  display: flex;
+  max-width: 90vw;
+  margin: 5vh auto 0 auto;
+  padding: 20px;
+  flex-direction: column;
+  background-color: rgb(34, 32, 32);
+}
+
+.layer-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: 320px) {
+    flex-direction: row;
+  }
+
+  img {
+    width: max-content;
+    height: max-content;
+  }
+}
+
+.details-image {
+  display: flex;
+  max-width: 33vw;
+
+  @media (min-width: 320px) {
+    max-width: 20vw;
+  }
+
+  @media (min-width: 720px) {
+    max-width: 10vw;
+  }
+}
+
+button {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: space-evenly;
+
+  &__description {
+    overflow: hidden;
+    overflow-wrap: break-word;
+
+    @media (min-width: 320px) {
+      max-width: 20vw;
+    }
+  }
+}

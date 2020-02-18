@@ -1,0 +1,12 @@
+.additional-content-bar {
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  &__movies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 80vw;
+  }
+}

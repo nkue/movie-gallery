@@ -1,37 +1,40 @@
-<div class="shim">
-  <div class="layer">
-    <div class="layer-main">
-      <button (click)="onClick()">✗</button>
-      <div class="layer-inner">
-        <div class="content">
-          <h2>{{ specMovie.name }}</h2>
-          <span class="content__description">{{ specMovie.description }}</span>
-          <h4 class="content__headline">Genres</h4>
-          <ul>
-            <div *ngFor="let genre of specMovie.genres">
-                <li>
-                    {{ genre }}
-                </li>
+<div *ngIf="specMovie">
+  <div class="shim">
+    <div class="layer">
+      <div class="layer-main">
+        <button (click)="onClick()">Return to overview</button>
+        <div class="layer-inner">
+          <img src="{{ specMovie.img }}" class="movie-img" />
+          <div class="content">
+            <h2 class="content__headline">{{ specMovie.name }}</h2>
+            <div class="content__genres">
+              <span
+                ><strong>{{ specMovie.length }} | </strong></span
+              >
+              <span *ngFor="let genre of specMovie.genres">
+                {{ genre }}
+              </span>
             </div>
-          </ul>
-          <span>Rating: {{ specMovie.rate }}</span>
-          <span>Length: {{ specMovie.length }}</span>
+            <span>Rating: {{ specMovie.rate }}</span>
+            <span class="content__description">{{
+              specMovie.description
+            }}</span>
+          </div>
         </div>
-        <img src="{{ specMovie.img }}" />
       </div>
+      <hr class="break" />
+      <app-additional-content-bar [genre]="specMovie.genres[0]">
+        <div *ngFor="let movie of ofSameGenre">
+          <app-image-tile
+            [src]="movie.img"
+            [alt]="movie.description"
+            [id]="movie.id"
+            [onClick]="selectImage"
+            class="details-image"
+          >
+          </app-image-tile>
+        </div>
+      </app-additional-content-bar>
     </div>
-    <hr />
-    <app-additional-content-bar [genre]="specMovie.genres[0]">
-      <div *ngFor="let movie of ofSameGenre">
-        <app-image-tile
-          [src]="movie.img"
-          [alt]="movie.description"
-          [id]="movie.id"
-          [onClick]="selectImage"
-          class="details-image"
-        >
-        </app-image-tile>
-      </div>
-    </app-additional-content-bar>
   </div>
 </div>

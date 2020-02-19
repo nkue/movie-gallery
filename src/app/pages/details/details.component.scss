@@ -16,18 +16,19 @@
   padding: 20px;
   flex-direction: column;
   background-color: rgb(34, 32, 32);
+  justify-content: center;
 }
 
 .layer-inner {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 
   @media (min-width: 320px) {
     flex-direction: row;
   }
 
-  img {
+  .movie-img {
     width: max-content;
     height: max-content;
   }
@@ -56,14 +57,24 @@ button {
   display: flex;
   flex-direction: column;
   color: white;
-  justify-content: space-evenly;
+  margin-left: 20px;
+
+  &__headline {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
 
   &__description {
-    overflow: hidden;
-    overflow-wrap: break-word;
-
     @media (min-width: 320px) {
       max-width: 20vw;
     }
   }
+
+  & > span {
+    padding-bottom: 10px;
+  }
+}
+
+.break {
+  width: 33vw;
 }

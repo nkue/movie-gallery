@@ -1,6 +1,5 @@
 <div class="tile">
-    <a (click)="doStuff($event)">
-      <img src="{{src}}" alt="{{alt}}" />
-    </a>
-  </div>
-  
+  <a href="/details/{{ id }}" (click)="doStuff($event)" class="image-link">
+    <img src="{{ src }}" alt="{{ alt }}" />
+  </a>
+</div>

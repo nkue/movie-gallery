@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
-import data from "../../../movie.mock-data";
+import { mockData } from "../../../movie.mock-data";
 
 @Component({
   selector: "app-root",
@@ -12,9 +12,9 @@ export class AppComponent {
   title = "main";
   constructor(private router: Router) {}
 
-  public movies = data;
+  public movies = mockData;
   public filteredMovies = this.movies;
-  public selectedImage;
+  public selectedImage?: string;
 
   public selectImage = (id: number) => {
     this.router.navigate(["details", id]);
@@ -24,7 +24,7 @@ export class AppComponent {
     this.selectedImage = undefined;
   };
 
-  public onSearch = input => {
+  public onSearch = (input: string) => {
     if (input.length === 0) {
       this.filteredMovies = this.movies;
       return;

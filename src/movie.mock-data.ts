@@ -1,4 +1,4 @@
-interface Movie {
+export interface Movie {
 	id: number;
 	key: string;
 	name: string;
@@ -9,7 +9,7 @@ interface Movie {
 	img: string;
   }
 
-const mockData: Movie[] = [
+export const mockData: Movie[] = [
 	{
 		"id": 1,
 		"key": "deadpool",
@@ -342,5 +342,3 @@ const mockData: Movie[] = [
 		"img": "assets/images/movie-covers/bad-boys.jpg"
 	}
 ]
-
-export default mockData;

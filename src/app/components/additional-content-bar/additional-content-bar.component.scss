@@ -1,12 +1,15 @@
 .additional-content-bar {
-  display: flex;
-  flex-direction: column;
-  color: white;
+  color: rgb(241, 241, 241);
+  padding: 0 5vw 5vw;
 
   &__movies {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-items: center;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 }

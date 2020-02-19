@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 
 import { Movie, mockData } from "../../../movie.mock-data";
 
@@ -15,13 +15,12 @@ export class DetailsComponent implements OnInit {
   public movieId?: number;
   public specMovie?: Movie;
   public ofSameGenre?: Movie[];
-  public selectedImage?: string;
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe({
-      next: parameter => {
+      next: (parameter: ParamMap) => {
         this.movieId = parseInt(parameter.get("id"));
         this.specMovie = this.getSpecificMovie(this.movieId);
         this.ofSameGenre = this.movies.filter(
@@ -31,6 +30,7 @@ export class DetailsComponent implements OnInit {
         );
       }
     });
+    
   }
 
   private getSpecificMovie = (movieId: number) => {
@@ -55,7 +55,8 @@ export class DetailsComponent implements OnInit {
     event.stopPropagation()
   }
 
-  public onClick = () => {
+  public closeLayer = () => {
+    event.preventDefault();
     this.router.navigate(["/"]);
   }
 }

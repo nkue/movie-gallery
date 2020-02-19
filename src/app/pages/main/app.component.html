@@ -1,8 +1,21 @@
-<div id="app">
-  <app-search [onSearch]="onSearch"></app-search>
+<div id="app" class="app">
+  <div class="search-container">
+    <app-search [onSearch]="onSearch"></app-search>
+    <select (change)="onSelectChange($event.target)" class="search-select">
+      <option selected value="All">All</option>
+      <option *ngFor="let genre of allGenres" value="{{ genre }}">{{
+        genre
+      }}</option>
+    </select>
+  </div>
   <app-layout>
     <div *ngFor="let movie of filteredMovies">
-      <app-movie-tile [src]="movie.img" [alt]="movie.description" [id]="movie.id" [onClick]="selectImage">
+      <app-movie-tile
+        [src]="movie.img"
+        [alt]="movie.description"
+        [id]="movie.id"
+        [onClick]="selectImage"
+      >
       </app-movie-tile>
     </div>
   </app-layout>

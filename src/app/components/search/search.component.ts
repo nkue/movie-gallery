@@ -7,7 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  @Input() public names;
   @Input() public onSearch;
 
   constructor() { }

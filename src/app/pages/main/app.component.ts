@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { mockData } from "../../../movie.mock-data";
+import { mockData, allGenres } from "../../../movie.mock-data";
 
 @Component({
   selector: "app-root",
@@ -13,8 +13,11 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   public movies = mockData;
+  public allGenres = allGenres;
   public filteredMovies = this.movies;
   public selectedImage?: string;
+  public searchString?: string;
+  public selectedGenre: string = "All";
 
   public selectImage = (id: number) => {
     this.router.navigate(["details", id]);
@@ -25,22 +28,28 @@ export class AppComponent {
   };
 
   public onSearch = (input: string) => {
-    if (input.length === 0) {
-      this.filteredMovies = this.movies;
-      return;
-    }
-    this.filteredMovies = this.filteredMovies.filter(
-      movie => movie.name.toLowerCase().includes(input)
-      // Object.entries(movie).forEach(([key, value]) => {
-      //   if (key === 'name' && value.toString().toLowerCase().includes(input)) {
-      //     filteredMovies.push(movie);
-      //   }
-      //   if (key === 'genres' && Array.isArray(value)) {
-      //     value.map(genre => {
-      //       console.log(genre)
-      //     })
-      //   }
-      // });
-    );
+    this.searchString = input;
+    this.filterMovies();
+  };
+
+  private filterMovies = () => {
+    this.filteredMovies = this.movies.filter(movie => {
+      const validSearchString =
+        this.searchString && this.searchString.length > 0
+          ? movie.name.toLowerCase().includes(this.searchString)
+          : true;
+      const validGenres =
+        this.selectedGenre !== "All"
+          ? movie.genres.includes(this.selectedGenre)
+          : true;
+
+      return validSearchString && validGenres;
+    });
+  };
+
+  public onSelectChange = (element: EventTarget) => {
+    const value = (element as HTMLSelectElement).value;
+    this.selectedGenre = value;
+    this.filterMovies();
   };
 }

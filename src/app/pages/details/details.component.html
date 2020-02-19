@@ -1,28 +1,25 @@
 <div *ngIf="specMovie">
-  <div class="shim" (click)="onClick()">
+  <div class="shim" (click)="closeLayer()" (window:keyup.escape)="closeLayer()">
     <div class="layer" (click)="onMainClick()">
       <div class="layer-main">
-        <button (click)="onClick()" class="return-button">Return to overview</button>
+        <a (click)="closeLayer()" class="return-link" href="/">
+            ⇐ Return to overview
+        </a>
         <div class="layer-inner">
-          <img src="{{ specMovie.img }}" class="movie-img" />
           <div class="content">
             <h2 class="content__headline">{{ specMovie.name }}</h2>
             <div class="content__genres">
-              <span
-                ><strong>{{ specMovie.length }} | </strong></span
-              >
-              <span *ngFor="let genre of specMovie.genres">
-                {{ genre }}
-              </span>
+              <p>
+                <strong>{{ specMovie.length }} | </strong>
+                {{ specMovie.genres.join(" ") }}
+              </p>
             </div>
-            <span class="content__rating">☆ {{ specMovie.rate }}/10</span>
-            <span class="content__description">{{
-              specMovie.description
-            }}</span>
+            <p class="content__rating"><span class="star">☆</span> {{ specMovie.rate }}/10</p>
+            <p class="content__description">{{ specMovie.description }}</p>
           </div>
+          <img src="{{ specMovie.img }}" class="movie-img" />
         </div>
       </div>
-      <hr class="break" />
       <app-additional-content-bar [genre]="specMovie.genres[0]">
         <div *ngFor="let movie of ofSameGenre">
           <app-movie-tile

@@ -1,12 +1,14 @@
-.search-container {
-  width: 100vw;
-  margin: 12px auto;
-}
+// .search-container {
+//   display: flex;
+//   height: 10vw;
+//   justify-content: space-around;
+//   align-items: center;
+// }
 
 .search-input {
     width: 50vw;
+    height: 5vw;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
     border: 1px solid #ddd;
-    margin: auto;
   }

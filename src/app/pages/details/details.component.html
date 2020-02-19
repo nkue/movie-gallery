@@ -25,14 +25,14 @@
       <hr class="break" />
       <app-additional-content-bar [genre]="specMovie.genres[0]">
         <div *ngFor="let movie of ofSameGenre">
-          <app-image-tile
+          <app-movie-tile
             [src]="movie.img"
             [alt]="movie.description"
             [id]="movie.id"
             [onClick]="selectImage"
             class="details-image"
           >
-          </app-image-tile>
+          </app-movie-tile>
         </div>
       </app-additional-content-bar>
     </div>

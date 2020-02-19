@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImageTileComponent } from './image-tile.component';
+import { ImageTileComponent } from './movie-tile.component';
 
 describe('ImageTileComponent', () => {
   let component: ImageTileComponent;

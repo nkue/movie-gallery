@@ -2,8 +2,8 @@
   <app-search [onSearch]="onSearch"></app-search>
   <app-layout>
     <div *ngFor="let movie of filteredMovies">
-      <app-image-tile [src]="movie.img" [alt]="movie.description" [id]="movie.id" [onClick]="selectImage">
-      </app-image-tile>
+      <app-movie-tile [src]="movie.img" [alt]="movie.description" [id]="movie.id" [onClick]="selectImage">
+      </app-movie-tile>
     </div>
   </app-layout>
 </div>

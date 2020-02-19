@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-image-tile',
-  templateUrl: './image-tile.component.html',
-  styleUrls: ['./image-tile.component.scss']
+  selector: 'app-movie-tile',
+  templateUrl: './movie-tile.component.html',
+  styleUrls: ['./movie-tile.component.scss']
 })
 export class ImageTileComponent implements OnInit {
 

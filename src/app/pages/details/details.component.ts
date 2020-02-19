@@ -51,8 +51,8 @@ export class DetailsComponent implements OnInit {
     );
   };
 
-  public deselectImage = () => {
-    this.selectedImage = undefined;
+  public onMainClick = () => {
+    event.stopPropagation()
   }
 
   public onClick = () => {

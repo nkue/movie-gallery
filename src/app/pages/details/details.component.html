@@ -1,6 +1,6 @@
 <div *ngIf="specMovie">
-  <div class="shim">
-    <div class="layer">
+  <div class="shim" (click)="onClick()">
+    <div class="layer" (click)="onMainClick()">
       <div class="layer-main">
         <button (click)="onClick()">Return to overview</button>
         <div class="layer-inner">
@@ -15,7 +15,7 @@
                 {{ genre }}
               </span>
             </div>
-            <span>Rating: {{ specMovie.rate }}</span>
+            <span class="content__rating">☆ {{ specMovie.rate }}/10</span>
             <span class="content__description">{{
               specMovie.description
             }}</span>

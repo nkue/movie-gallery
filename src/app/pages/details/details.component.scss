@@ -24,7 +24,7 @@
   flex-direction: column;
   justify-content: center;
 
-  @media (min-width: 320px) {
+  @media (min-width: 450px) {
     flex-direction: row;
   }
 
@@ -66,11 +66,15 @@ button {
 
   &__description {
     @media (min-width: 320px) {
-      max-width: 20vw;
+      max-width: 30vw;
     }
   }
 
-  & > span {
+  &__genres {
+    padding-bottom: 10px;
+  }
+
+  &__rating {
     padding-bottom: 10px;
   }
 }

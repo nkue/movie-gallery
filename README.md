@@ -1,27 +1,39 @@
 # MySassyApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24 and requires Angular CLI to be installed for it to run.
+
+        npm install -g @angular/cli
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
+## About
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This application represents the outcome of an exercise to build a movie gallery.
 
-## Build
+It was written using the following tech stack:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- [Angular](https://angular.io/) (v.~9.0.1)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Rxjs](https://github.com/ReactiveX/rxjs)
+- [Sass](http://sass-lang.com/)
 
-## Running unit tests
+Due to the relatively limited complexity and scope of the application, no **Redux** or similar state management was implemented.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Features
 
-## Running end-to-end tests
+**Main Page**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- List of movies
+- Search
+    - Filter by name
+    - Filter by genre
+    - Filter by name and genre
+- Details page opens when selecting a specific movie
 
-## Further help
+**Details Page**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Detailed information regarding the specific movie
+- Further movies the might be of interest based on genre
+- Return button

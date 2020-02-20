@@ -6,7 +6,7 @@ After cloning the application, please run:
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## About
 

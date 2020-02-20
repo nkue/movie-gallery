@@ -1,22 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  selector: "app-search",
+  templateUrl: "./search.component.html",
+  styleUrls: ["./search.component.scss"]
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
+  @Input() public onSearch: (input: string) => void;
 
-  @Input() public onSearch;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  public performSearch = (event) => {
+  public performSearch = (event: KeyboardEvent) => {
     event.preventDefault();
-    this.onSearch(event.target.value.toLowerCase());
-  }
-
+    this.onSearch((event.target as HTMLInputElement).value.toLowerCase());
+  };
 }

@@ -1,17 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-additional-content-bar',
   templateUrl: './additional-content-bar.component.html',
   styleUrls: ['./additional-content-bar.component.scss']
 })
-export class AdditionalContentBarComponent implements OnInit {
+export class AdditionalContentBarComponent {
 
-  @Input() public genre;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input() public genre: string;
 
 }

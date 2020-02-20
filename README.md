@@ -1,4 +1,4 @@
-# MySassyApp
+# Angular Movie Gallery
 
 After cloning the application, please run:
 

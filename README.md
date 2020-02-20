@@ -1,8 +1,8 @@
 # MySassyApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24 and requires Angular CLI to be installed for it to run.
+After cloning the application, please run:
 
-        npm install -g @angular/cli
+        npm install
 
 ## Development server
 

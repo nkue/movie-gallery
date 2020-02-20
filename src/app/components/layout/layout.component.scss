@@ -3,36 +3,24 @@
     column-gap: 20px;
     row-gap: 40px;
     padding: 20px;
-    background-color: rgb(34, 32, 32);
-  }
   
-  @media (min-width: 560px) and (max-width: 719px) {
-    .layout {
+  @media (min-width: 560px) {
       grid-template-columns: repeat(2, 1fr);
-    }
   }
   
-  @media (min-width: 720px) and (max-width: 919px) {
-    .layout {
+  @media (min-width: 720px) {
       grid-template-columns: repeat(3, 1fr);
-    }
   }
   
-  @media (min-width: 920px) and (max-width: 1239px) {
-    .layout {
+  @media (min-width: 920px) {
       grid-template-columns: repeat(4, 1fr);
-    }
   }
   
-  @media (min-width: 1240px) and (max-width: 1599px) {
-    .layout {
+  @media (min-width: 1240px) {
       grid-template-columns: repeat(5, 1fr);
-    }
   }
   
   @media (min-width: 1600px) {
-    .layout {
       grid-template-columns: repeat(6, 1fr);
-    }
   }
-  
+} 
